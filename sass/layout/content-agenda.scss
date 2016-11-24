@@ -1,0 +1,25 @@
+.posts-agenda {
+	.entry-content {
+		p {
+			margin: 0;
+			padding-bottom: 0;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		.concert-date {
+			font-size: 2rem;
+			position: relative;
+			&:after {
+				content: "";
+				width: 33.33%;
+				height: 1px;
+				border-top: solid 1px $color__background-hr;
+				color: grey;
+				position: absolute;
+				left: 33.33%;
+				bottom: -10px;
+				display: block;
+			}
+		}
+	}
+}

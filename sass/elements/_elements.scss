@@ -1,0 +1,84 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+}
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+@import "lists";
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+@import "tables";
+
+/* DISQUS */
+
+#disqus_thread {
+	height: 500px !important;
+	width: 80% !important;
+	margin: 0 auto !important;
+}
+
+// Header
+.site-banner-header .banner-featured,
+.has-post-thumbnail .entry-meta .cat-links {
+	background: $primary-color;
+}
+
+// Footer
+.site-footer {
+	background-color: $background-color;
+}
+
+.footer-bottom-info {
+	background-color: $footer-color;
+}
+
+pre:before,
+.is-singular .post-navigation .nav-links:after,
+.link-more a {
+	background-color: $secondary-color;
+}
+
+.is-singular .entry-inner:after,
+.error404 .entry-inner:after {
+	background: $secondary-color;
+}
+
+.page-id-2 {
+	background: #000 url('http://liveloop.fr/wp-content/uploads/2015/12/DSC09891-2.jpg') no-repeat fixed center;
+	-webkit-background-size: cover;
+	/* pour anciens Chrome et Safari */
+	background-size: cover;
+	/* version standardisée */
+}

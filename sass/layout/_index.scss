@@ -1,0 +1,112 @@
+// Add This
+.site-banner-header .addthis_toolbox {
+	display: none;
+}
+
+.post .entry-content .addthis_toolbox {
+	display: none;
+}
+
+.header-posts {
+	padding: 50px 30px;
+	background-color: white;
+	position: relative;
+	text-align: center;
+	width: 50%;
+	left: 25%;
+	&::before {
+		left: 25%;
+		top: 50px;
+		width: 50%;
+		border-top: 1px solid #ccc;
+		content: "";
+		display: block;
+		margin: 0 auto;
+		position: absolute;
+	}
+	.banner {
+		text-align: center;
+		background-color: $primary-color;
+		padding: 10px 0;
+		color: #fff;
+		display: inline-block;
+		font-size: 1.3rem;
+		letter-spacing: 0.1em;
+		line-height: 1;
+		padding: 13px 15px;
+		position: relative;
+		text-transform: uppercase;
+		top: -20px;
+	}
+	p {
+		text-align:left;
+	}
+}
+
+// Agenda
+.more-agenda {
+		background-color: #292c2f;
+		clear: both;
+		color: #9a9c9e;
+		margin-top: 0;
+		padding: 2rem;
+		overflow: hidden;
+		text-align: center;
+		span {
+			background: transparent;
+			display: inline-block;
+			padding: 0;
+			text-align: center;
+			border-radius: 1px;
+			color: #eee;
+			cursor: pointer;
+			font-size: 13px;
+			button {
+				background-color: rgba(0, 0, 0, 0.2);
+				color: #858d95;
+				display: block;
+				font-size: 1.4rem;
+				padding: .62em 1.62em;
+				text-transform: uppercase;
+				-webkit-transition: opacity 0.3s;
+				transition: opacity 0.3s;
+				position: static;
+				margin: 0;
+				border: none;
+				line-height: inherit;
+				cursor: inherit;
+				font-weight: inherit;
+				font-family: inherit;
+			}
+		}
+	}
+
+.posts.posts-agenda {
+	background-color: white;
+}
+
+.counter {
+  animation-duration: 1s;
+  animation-delay: 0s;
+}
+.stats-agenda {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.stats-item {
+		float: left;
+		width: calc(100% / 3);
+		.genericon {
+			font-size: 4rem;
+			margin: 0 auto;
+		}
+		p {
+			text-align: center;
+		}
+	}
+}

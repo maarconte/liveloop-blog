@@ -1,0 +1,117 @@
+/*
+----------
+Menu
+----------
+*/
+
+.site-header,
+.home .site-header,
+.blog .site-header,
+.is-singular .site .site-header,
+.admin-bar .site-header,
+.admin-bar.is-singular .site-header {
+	$nav-width: calc(100% / 3);
+	display: flex;
+	padding: 5px 15px;
+	@media screen and (max-width: 960px) {
+		flex-direction: column;
+		padding: 1rem 0 0 !important;
+	}
+	#site-navigation {
+		text-align: left;
+		position: absolute;
+		top: 27px;
+		left: 0;
+		font-size: 1.25rem;
+		width: $nav-width;
+		@media screen and (max-width: 960px) {
+			position: initial;
+			margin: 0 auto;
+			display: block;
+			float: none;
+			text-align: left;
+			width: 100%;
+			order: 2;
+			ul li {
+				border-top: 1px solid rgba(255, 255, 255, 0.2);
+				a {
+					color: #fff;
+					padding: 1rem 2rem;
+				}
+			}
+			#site-navigation ul ul {
+				background-color: rgb(25, 108, 112);
+				line-height: 1.6;
+				margin: 0 0 0 0 !important;
+				padding: 0 0 0 2rem;
+				position: static;
+				width: auto;
+				li {
+					background: inherit;
+					display: block;
+					font-size: 1.4rem;
+					letter-spacing: 0;
+					margin-left: 0;
+					padding: 0;
+					text-align: left;
+					text-transform: none;
+					a {
+						color: #fff;
+					}
+				}
+			}
+		}
+		.menu-toggle {
+			top: 2.1rem;
+			@media screen and (max-width: 400px) {
+				top: 0;
+			}
+		}
+	}
+	.site-branding {
+		padding: 5px 0;
+		width: auto;
+		position: relative;
+		display: block;
+		margin: 0 auto;
+		.site-logo-link {
+			line-height: 1;
+			padding-right: 10px;
+			vertical-align: middle;
+		}
+	}
+	.menu-social {
+		width: $nav-width;
+		display: table-cell;
+		vertical-align: middle;
+		font-size: 1.4rem;
+		text-align: right;
+		position: absolute;
+		top: 25px;
+		right: 15px;
+		@media screen and (max-width: 960px) {
+			display: none;
+		}
+		ul {
+			margin: 0;
+			list-style: none;
+			padding: 0;
+			li {
+				display: inline-block;
+				letter-spacing: 0.1em;
+				margin-left: 1.5em;
+				padding: 6px 0 10px;
+				text-transform: uppercase;
+				a {
+					transition: opacity 0.3s;
+					&:hover {
+						opacity: .7;
+					}
+				}
+				img {
+					height: 30px;
+				}
+			}
+		}
+	}
+}
