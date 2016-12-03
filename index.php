@@ -59,9 +59,30 @@ get_header(); ?>
 									</li>
 								</ul>
 						</div>
-						<?php $loop = new WP_Query( array( 'post_type' => 'agenda', 'posts_per_page' => 6, 'meta_key'	=> 'date', 'orderby' => 'date', 'order'	=> 'DESC' ) );
+
+						<?php
+						$today = date('Ymd');
+$args = array(
+    'post_type' => 'agenda',
+    'posts_per_page' => '6',
+    'meta_key' => 'date',
+    'meta_query' => array(
+        array(
+            'key' => 'date'
+        ),
+        array(
+            'key' => 'date',
+            'value' => $today,
+            'compare' => '>='
+        )
+    ),
+    'orderby' => 'meta_value_num',
+    'order' => 'ASC'
+);
+
+						$loop = new WP_Query($args);
 							while ( $loop->have_posts() ) : $loop->the_post();
-  								get_template_part( 'template-parts/content', 'agenda' );
+									get_template_part( 'template-parts/content', 'agenda' );
 							endwhile;?>
 						</div>
 					 	<?php else : ?>

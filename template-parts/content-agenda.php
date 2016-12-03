@@ -25,7 +25,7 @@
 				$now = $now->format(’Ymd’); ?>
 
 				<?php if ($post_review) : ?>
-					<div class="link-more"><a class="btn_review" href="<?php echo $post_review ?>">Review</a></div>
+					<div class=" a link-more"><a class="btn_review" href="<?php echo $post_review ?>">Review</a></div>
 				<?php //endif; ?>
 		  		<?php elseif ( $status && in_array('SoldOut', $status) ): ?>
 		  		<div class="link-more"><a class="disabled" disabled>Sold Out</a></div>

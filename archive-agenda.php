@@ -24,7 +24,26 @@ get_header(); ?>
 
 
 				<?php /* Start the Loop */ ?>
-				<?php $loop = new WP_Query( array( 'post_type' => 'agenda', 'meta_key' => 'date', 'orderby' => 'meta_value') ); ?>
+				<?php
+									$today = date('Ymd');
+$args = array(
+    'post_type' => 'agenda',
+    'meta_key' => 'date',
+    'meta_query' => array(
+        array(
+            'key' => 'date'
+        ),
+        array(
+            'key' => 'date',
+            'value' => $today,
+            'compare' => '>='
+        )
+    ),
+    'orderby' => 'meta_value_num',
+    'order' => 'ASC'
+);
+
+						$loop = new WP_Query($args);?>
 				<?php while ($loop->have_posts() ) : $loop->the_post(); ?>
 
 					<?php
