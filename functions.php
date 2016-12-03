@@ -8,7 +8,7 @@ add_action('init', 'my_custom_init'); function my_custom_init() {
 /* notre code PHP pour rajouter les custom post type */
 register_post_type(   'agenda',
 array(
-		'label' => 'Projets',
+		'label' => 'Agenda',
 		'labels' => array(
 		'name' => 'Agenda',
 		'singular_name' => 'Agenda',
@@ -26,7 +26,6 @@ array(
 	'supports' => array(
 		'title',
 		'thumbnail',
-		'editor'
 	),
 	'has_archive' => true
 ) );
