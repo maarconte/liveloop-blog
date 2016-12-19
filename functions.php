@@ -23,6 +23,7 @@ array(
 	),
 	'public' => true,
 	'capability_type' => 'post',
+	'menu_icon'   => 'dashicons-calendar-alt',
 	'supports' => array(
 		'title',
 		'thumbnail',

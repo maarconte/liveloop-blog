@@ -16,6 +16,8 @@
 				$status = get_field( "status" );
 				$post_review = get_field("review");
 				$venue = get_field( "venue" );
+				$festival_venue = get_field("festival_venue");
+				$concert_type = get_field("concert_type");
 				$preview_url = get_field("soundcloud");
 				$date = get_field('date',false,false);
 
@@ -48,13 +50,22 @@
 
 					<div class="entry-content">
 						<?php $date = new DateTime($date);?>
+						<?php if (get_field("opening_act")) : ;?>
+						<p>+ <?php echo get_field("opening_act");?> </p>
+						<?php endif ;?>
 							<p class="concert-date"><?php echo $date->format('j M Y'); ?></p>
 							<p class="concert-venue"><?php echo $venue; ?></p>
 							<?php
+						//if ($concert_type == 'festival') : ?>
+							<p class="concert-venue"><?php echo $festival_venue ; ?></p>
+							<?php //endif ;?>
+<!--
+							<?php
 						//$album_url = "https://soundcloud.com/bornsmusic/borns-american-money-preview";
-						$params = ' params="color=ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" width="100%" height="100" iframe="true"';
+						$params = ' params="color=00aabb&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false" width="100%" height="100" iframe="true"';
 						if ($preview_url)
 						echo do_shortcode('[soundcloud'.$params.']'.$preview_url.'[/soundcloud]'); ?>
+-->
 					</div>
 					<!-- .entry-content -->
 				</div>

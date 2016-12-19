@@ -41,7 +41,7 @@ get_header(); ?>
 				<?php if ( have_posts() ) : ?>
 					<div id="agenda" class="posts posts-agenda">
 						<div class="header-posts">
-							<span class="banner">Agenda</span>
+							<span class="banner">Nos prochains concerts</span>
 							<?php $count_posts = wp_count_posts('agenda'); ?>
 								<p><?php dynamic_sidebar( 'agenda-description' ); ?> </p>
 								<ul class="stats-agenda">
@@ -58,6 +58,7 @@ get_header(); ?>
 									<p>Grosse groupie : <?php get_most_viewed_artist(); ?> (<span class="counter"><?php get_most_viewed_artist_count(); ?></span>)</p>
 									</li>
 								</ul>
+								<div class=" a link-more"><a class="btn_review" href="<?php echo site_url('/agenda'); ?>">Agenda</a></div>
 						</div>
 
 						<?php
