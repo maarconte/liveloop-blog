@@ -17,23 +17,22 @@
 				$post_review = get_field("review");
 				$venue = get_field( "venue" );
 				$preview_url = get_field("soundcloud");
+				$date = get_field('date',false,false);
 
-				$date = get_field('date', false, false);
-				$date = new DateTime($date);
+				$today = date('Ymd'); ?>
 
-				$now = new DateTime( $now );
-				$now = $now->format(’Ymd’); ?>
 
-				<?php if ($post_review) : ?>
-					<div class=" a link-more"><a class="btn_review" href="<?php echo $post_review ?>">Review</a></div>
-				<?php //endif; ?>
-		  		<?php elseif ( $status && in_array('SoldOut', $status) ): ?>
-		  		<div class="link-more"><a class="disabled" disabled>Sold Out</a></div>
-
-				<?php //endif; ?>
-				<?php else : ?>
-					<div class="link-more"><a href="<?php echo $tickets ?>"> Billets</a></div>
-				<?php endif;?>
+				<?php if ($date < $today) {
+							if ($post_review) { ?>
+							<div class=" a link-more"><a class="btn_review" href="<?php echo $post_review ?>">Review</a></div>
+							<?php };?>
+				<?php } else { ;?>
+						<?php if ($status && in_array('SoldOut', $status)) { ?>
+							<div class="link-more"><a class="disabled" disabled>Sold Out</a></div>
+						<?php  }  else if ($tickets) { ;?>
+							<div class="link-more"><a href="<?php echo $tickets ?>"> Billets</a></div>
+						<?php };?>
+				<?php } ;?>
 			</div>
 
 			<div class="entry-inner">
@@ -48,8 +47,7 @@
 					<!-- .entry-header -->
 
 					<div class="entry-content">
-						<?php
-						?>
+						<?php $date = new DateTime($date);?>
 							<p class="concert-date"><?php echo $date->format('j M Y'); ?></p>
 							<p class="concert-venue"><?php echo $venue; ?></p>
 							<?php
