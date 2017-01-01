@@ -42,7 +42,7 @@
 					<header class="entry-header">
 						<h2 class="entry-title">
 <!--						<a href="<?php echo get_site_url(); ?>/tag/<?php the_title();?>">-->
-						<?php the_title();?><?php if (get_field('sound')) : ?><span class=" toggle-sound genericon genericon-audio"></span><?php endif;?>
+						<?php the_title();?><?php if (get_field('sound')) : ?><span class=" toggle-video genericon genericon-audio"></span><?php endif;?>
 <!--						</a>-->
 						</h2>
 					</header>
@@ -74,10 +74,10 @@
 
 			</div>
 			<!-- .entry-inner -->
-			<?php if (get_field('sound')) : ?>
+			<?php if (get_field('video')) : ?>
 				<div class="embed-container" style="display:none;">
-					<span class="toggle-sound genericon genericon-close"></span>
-						<?php the_field('sound'); ?>
+					<span class="toggle-video genericon genericon-close"></span>
+						<?php the_field('video'); ?>
 				</div>
 							<?php endif;?>
 	</article>

@@ -19,10 +19,16 @@
 			width: 70%;
 			height: 60%;
 			top: 20%;
+			@include for-size(phone) {
+				width: 90%;
+				height: 40%;
+				top: 25%;
+				left: 5%;
+			}
 		}
 		.genericon-close {
 			float: right;
-			font-size: 2rem;
+			font-size: 4rem;
 			cursor: pointer;
 		}
 	}
