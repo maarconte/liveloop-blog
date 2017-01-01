@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
-$( 'article' ).click(function() {
-  $(this).find( '.embed-container' ).fadeToggle( 'slow' );
+$( '.toggle-sound' ).click(function() {
+  $(this).parentsUntil('.posts-agenda').find( '.embed-container' ).fadeToggle( 'slow' );
 });
 
 });
