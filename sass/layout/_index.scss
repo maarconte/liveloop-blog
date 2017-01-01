@@ -12,8 +12,18 @@
 	background-color: white;
 	position: relative;
 	text-align: center;
-	width: 50%;
+		@include for-size(phone) {
+			left: 0;
+    width: 100%;
+  }
+	@include for-size(tablet-portrait) {
+	left: 15%;
+    width: 70%;
+  }
+	@include for-size(desktop) {
 	left: 25%;
+    width: 50%;
+  }
 	&::before {
 		left: 25%;
 		top: 50px;

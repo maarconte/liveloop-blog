@@ -1,4 +1,45 @@
 .posts-agenda {
+	article {
+		position: relative;
+	}
+	.embed-container {
+		position: absolute;
+		z-index: 6;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255,255,255,0.5);
+		top: 0;
+		left: 0;
+		border: solid;
+		border-color: rgba(0, 0, 0, 0.2);
+		border-width: 15px;
+		iframe {
+			left: 15%;
+			position: absolute;
+			width: 70%;
+			height: 60%;
+			top: 20%;
+		}
+		.genericon-close {
+			float: right;
+			font-size: 2rem;
+			cursor: pointer;
+		}
+	}
+	.entry-title {
+		position: relative;
+		.genericon {
+			font-size: 2rem;
+			vertical-align: middle;
+			margin-left: 5px;
+			line-height: 0;
+			transition-duration: 2s;
+			&:hover {
+				cursor: pointer;
+				opacity: .5;
+			}
+		}
+	}
 	.entry-content {
 		p {
 			margin: 0;
@@ -23,7 +64,6 @@
 		}
 	}
 }
-
 .posts-agenda .too-short {
 	.a.link-more {
 		background: none;
@@ -36,7 +76,6 @@
 			background: none;
 			content: none;
 			left: 1000000px;
-
 		}
 	}
 }

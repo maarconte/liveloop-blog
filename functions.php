@@ -1,4 +1,13 @@
 <?php
+
+function wpm_enqueue_js(){
+	$js_directory = get_stylesheet_directory_uri() . '/js/';
+	wp_register_script('toggle-sound',  $js_directory . 'toggle-sound.js');
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script('toggle-sound');
+}
+add_action( 'init', 'wpm_enqueue_js' );
+
 function wpm_enqueue_styles(){
 wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }

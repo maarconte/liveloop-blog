@@ -42,7 +42,7 @@
 					<header class="entry-header">
 						<h2 class="entry-title">
 <!--						<a href="<?php echo get_site_url(); ?>/tag/<?php the_title();?>">-->
-						<?php the_title();?>
+						<?php the_title();?><?php if (get_field('sound')) : ?><span class=" toggle-sound genericon genericon-audio"></span><?php endif;?>
 <!--						</a>-->
 						</h2>
 					</header>
@@ -59,6 +59,7 @@
 						//if ($concert_type == 'festival') : ?>
 							<p class="concert-venue"><?php echo $festival_venue ; ?></p>
 							<?php //endif ;?>
+
 <!--
 							<?php
 						//$album_url = "https://soundcloud.com/bornsmusic/borns-american-money-preview";
@@ -70,7 +71,14 @@
 					<!-- .entry-content -->
 				</div>
 				<!-- .entry-inner-content -->
+
 			</div>
 			<!-- .entry-inner -->
+			<?php if (get_field('sound')) : ?>
+				<div class="embed-container" style="display:none;">
+					<span class="toggle-sound genericon genericon-close"></span>
+						<?php the_field('sound'); ?>
+				</div>
+							<?php endif;?>
 	</article>
 	<!-- #post-## -->
